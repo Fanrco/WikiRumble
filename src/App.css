@@ -1,38 +1,310 @@
-.App {
-  text-align: center;
+:root {
+  --davys-grey: rgb(87, 86, 83);
+  --nickel: rgb(117, 117, 108);
+  --blacc: rgba(0, 0, 0);
+  --darkgray: rgb(17, 19, 20);
+  --offwhite: rgb(216, 208, 207);
+  --dimgray: rgb(108, 108, 108);
+}
+body{
+  background-color: var(--darkgray);
+  color: var(--offwhite);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.article{
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: absolute;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: 0.125em solid var(--offwhite);
+  overflow-y: scroll;
+  animation: fadeInArt 0.25s ease-in;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.article.hide {
+  color: var(--darkgray);
+  animation: fadeOutArt 0.25s ease-out;
+}
+
+#topArticle{
+  top: 25%;
+  left: 50%;
+  width: 90%;
+  height: 25%;
+  border: 0.125em solid #5F85DB;
+}
+
+#botArticle{
+    top: 85%;
+    left: 50%;
+    width: 90%;
+    height: 25%;
+    border: 0.125em solid #A21232
+}
+
+@keyframes fadeInArt {
+  0% {
+    color: var(--darkgray);
+  }
+  100% {
+    color: var(--offwhite);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@keyframes fadeOutArt {
+  0% {
+    color: var(--offwhite);
+  }
+  100% {
+    color: var(--darkgray);
+  }
+}
+
+#header {
+  width:100%;
+  height: 50px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color:  var(--darkgray);
+  color:  var(--offwhite);
+  border-bottom: 2px solid var(--offwhite);
+  position: absolute;
+  
 }
 
-.App-link {
-  color: #61dafb;
+#winsCount{
+  width: 70px;
+  padding: 10px;
+  color: rgb(255, 230, 0);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#livesCount{
+  width: 70px;
+  padding: 10px;
+  letter-spacing: 20px;
+  transform: translate(0%,5%);
+  color: #A21232;
 }
+
+#endGameScreen{
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  background: var(--darkgray);
+  border: 2px solid var(--offwhite);
+  top: 55%;
+  left: 50%;
+  opacity: 100%;
+  transform: translate(-50%, -50%);
+}
+
+#endGameScreen.hide {
+  opacity: 0%;
+  transition: opacity 0.25s;
+}
+
+  #container {
+    width: 100vh;
+    height: 100vh;
+    max-width: 375px;
+    max-height: 812px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+  }
+
+.fancybutton {
+  appearance: none;
+  background-color: var(--darkgray);
+  border: 0.125em solid var(--offwhite);
+  border-radius: 0.9375em;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: var(--offwhite);
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 3.75em;
+  min-width: 0;
+  outline: none;
+  padding: 1em 2.3em;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+  transition: opacity 0.25s;
+  opacity: 100%;
+}
+
+.fancybutton.hide {
+  opacity: 0%;
+  color: var(--darkgray);
+  transition: opacity 0.25s;
+}
+
+.labels{
+  opacity: 100%;
+  transition: opacity 0.25s;
+}
+
+.labels.hide{
+  opacity: 0%;
+  transition: opacity 0.25s;
+}
+
+.fancybutton:disabled {
+  pointer-events: none;
+ }
+ 
+ .fancybutton:hover {
+  color: var(--darkgray);;
+  background-color: var(--offwhite);
+  transform: translateY(-2px);
+ }
+ 
+ .fancybutton:active {
+  transform: translateY(0);
+ }
+
+#getButton {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+   }
+
+  #botViewsButton{
+    position: absolute;
+      top: 65%;
+      left: 15%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  }
+
+  #botSizeButton{
+    position: absolute;
+      top: 65%;
+      left: 85%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  }
+
+  #topViewsButton{
+    position: absolute;
+      top: 45%;
+      left: 15%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  }
+
+  #topSizeButton{
+    position: absolute;
+      top: 45%;
+      left: 85%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  }
+
+  .btnLabels{
+    line-height: 0%;
+  }
+
+  #viewsLabel{
+    position: absolute;
+      top: 55%;
+      left: 85%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  }
+
+  #sizeLabel{
+    position: absolute;
+    top: 55%;
+    left: 15%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  #chart1{
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    top: 55%;
+    left: 25%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  #chart2{
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    top: 55%;
+    left: 75%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .topPageCounts{
+    color: #5F85DB;
+    position: absolute;
+    top: 51%;
+    left: 25%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .botPageCounts{
+    color: #A21232;
+    position: absolute;
+    top: 59%;
+    left: 25%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
+  .topPageCountv{
+    color: #5F85DB;
+    position: absolute;
+    top: 51%;
+    left: 75%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .botPageCountv{
+    color: #A21232;
+    position: absolute;
+    top: 59%;
+    left: 75%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  #countLabels{
+    color: var(--offwhite);
+    position: absolute;
+    top: 55%;
+    left: 25%;
+    transform: translate(-50%, -120%);
+  }
+
+  #countLabelv{
+    color: var(--offwhite);
+    position: absolute;
+    top: 55%;
+    left: 75%;
+    transform: translate(-50%, -120%);
+  }
