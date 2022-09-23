@@ -5,14 +5,15 @@ const UI = ({gameState, action}) => {
     if(gameState !== "choose"){
         off = true;
     }
+    let loadClass = "loader" + (gameState === "load" ? "" : " hide");
     return (
         <div>
             <button disabled = {off} className = {"fancybutton"+(off ? " hide":"")} id="topViewsButton" onClick= {() => {action(0);}}>↑</button>
             <button disabled = {off} className = {"fancybutton"+(off ? " hide":"")} id="botViewsButton" onClick= {() => {action(1);}}>↓</button>
             <button disabled = {off} className = {"fancybutton"+(off ? " hide":"")} id="topSizeButton"  onClick= {() => {action(2);}}>↑</button>
             <button disabled = {off} className = {"fancybutton"+(off ? " hide":"")} id="botSizeButton"  onClick= {() => {action(3);}}>↓</button>
-            
-        
+            <div id = "loadIcon1" className = {loadClass}>Loading</div>
+            <div id = "loadIcon2"  className = {loadClass}>Loading</div>
             <div className = {"labels"+(off ? " hide":"")}>
                 <div id = "viewsLabel" className = "btnLabels">
                     <center><p>More</p><p>Views</p></center>
