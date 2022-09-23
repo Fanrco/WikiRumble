@@ -5,6 +5,7 @@ import CountUp from 'react-countup';
 const Charts = ({gameState, info}) => {
     if(gameState === "start" || gameState === "load" || gameState === "choose"){ return; }
     let animDur = 3000;
+    let linkclass = "articleLink" + ((gameState === "score") ? "" : " hide");
     return (
         <div>
         <div id="chart1">
@@ -29,6 +30,9 @@ const Charts = ({gameState, info}) => {
         <p id="countLabels">Length</p>
         <p id="countLabelv">Views</p>
         
+        <a id = "link1" rel="noreferrer" target = "_blank" className = {linkclass} href={info[0].link}>Link To Article</a>
+        <a id = "link2" rel="noreferrer" target = "_blank" className = {linkclass} href={info[1].link}>Link To Article</a>
+
         <div id="chart2">
             <PieChart
             animate = {true}

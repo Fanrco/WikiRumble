@@ -107,6 +107,28 @@ body{
   transition: opacity 0.25s;
 }
 
+.articleLink{
+  color: var(--offwhite);
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left:50%;
+  opacity: 100%;
+  transition: opacity 0.25s;
+}
+
+.articleLink.hide{
+  opacity: 0%;
+  transition: opacity 0.25s;
+}
+
+#link1{
+  top: 40%;
+}
+
+#link2{
+  top: 70%;
+}
+
   #container {
     width: 100vh;
     height: 100vh;

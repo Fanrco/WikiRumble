@@ -105,12 +105,14 @@ function App() {
         console.log("failed to load article");
       }
     }
-
-    console.log("https://en.wikipedia.org/wiki/"+title2.replace(/\s+/g, "%20"));
+    let link1 = "https://en.wikipedia.org/wiki/"+title1.replace(/\s+/g, "%20");
+    let link2 = "https://en.wikipedia.org/wiki/"+title2.replace(/\s+/g, "%20");
     //set state
     setArticles([
-      {title: title1, content: content1.slice(0,200)+"...", size: size1, views: views1},
-      {title: title2, content: content2.slice(0,200)+"...", size: size2, views: views2}]);
+      {title: title1, content: content1.slice(0,200)+"...",
+       size: size1, views: views1, link: link1 },
+      {title: title2, content: content2.slice(0,200)+"...", 
+      size: size2, views: views2, link: link2 }]);
     
     setGameState("choose");
   }
