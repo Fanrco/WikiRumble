@@ -33,8 +33,8 @@ function App() {
     let size1 = 0;
     let views1 = 0;
     while(content1.length < 200 || size1 === 0){
-      views1 = 0;
       try{
+        views1 = 0;
         //get titles
         let response = await fetch(randomUrl);
         let json = await response.json();
@@ -74,10 +74,10 @@ function App() {
     let size2 = 0;
     let views2 = 0;
     while(content2.length < 200 || size2 === 0 || size2 === size1 || views2 === views1){
-      views2 = 0;
       try{
+        views2 = 0;
         //get titles
-        let response =await fetch(randomUrl);
+        let response = await fetch(randomUrl);
         let json = await response.json();
         console.log("getting article 2");
         title2 = json.query.random[0].title;
@@ -96,15 +96,15 @@ function App() {
         size2 = pages[id2].length;
 
         //get views
-        response = await fetch(viewsUrl+title1.replace(/\s+/g, "%20"));
+        response = await fetch(viewsUrl+title2.replace(/\s+/g, "%20"));
         json = await response.json();
         pages = json.query.pages;
-        let vList = pages[id1].pageviews;
+        let vList = pages[id2].pageviews;
         for(let dpv of Object.values(vList)){
           views2 += dpv; 
         }
       }catch(err){
-        console.log("failed to load article");
+        console.log("failed to load article", err);
       }
     }
     let link1 = "https://en.wikipedia.org/wiki/"+title1.replace(/\s+/g, "%20");
