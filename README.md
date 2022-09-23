@@ -8,7 +8,7 @@ In this game, you are given two randomly selected wikipedia articles. You must g
 ## Future Features
 
 - [x] Add links to the articles upon revealing scores
-- [ ] Add loading animation for articles
+- [x] Add loading animation for articles
 - [ ] Add in/correct animation upon revealing scores
 - [ ] Add winning animation (confetti?)
 - [ ] Add Past Games Leaderboard

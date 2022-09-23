@@ -33,6 +33,7 @@ function App() {
     let size1 = 0;
     let views1 = 0;
     while(content1.length < 200 || size1 === 0){
+      views1 = 0;
       try{
         //get titles
         let response = await fetch(randomUrl);
@@ -73,6 +74,7 @@ function App() {
     let size2 = 0;
     let views2 = 0;
     while(content2.length < 200 || size2 === 0 || size2 === size1 || views2 === views1){
+      views2 = 0;
       try{
         //get titles
         let response =await fetch(randomUrl);
