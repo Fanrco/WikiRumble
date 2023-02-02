@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/WikiRumble/static/css/main.fd5b3cc7.css",
-    "main.js": "/WikiRumble/static/js/main.1f726795.js",
+    "main.css": "/WikiRumble/static/css/main.012191ac.css",
+    "main.js": "/WikiRumble/static/js/main.5cb47045.js",
     "static/media/heart.png": "/WikiRumble/static/media/heart.59848f4811a23aa759c3.png",
     "index.html": "/WikiRumble/index.html",
-    "main.fd5b3cc7.css.map": "/WikiRumble/static/css/main.fd5b3cc7.css.map",
-    "main.1f726795.js.map": "/WikiRumble/static/js/main.1f726795.js.map"
+    "main.012191ac.css.map": "/WikiRumble/static/css/main.012191ac.css.map",
+    "main.5cb47045.js.map": "/WikiRumble/static/js/main.5cb47045.js.map"
   },
   "entrypoints": [
-    "static/css/main.fd5b3cc7.css",
-    "static/js/main.1f726795.js"
+    "static/css/main.012191ac.css",
+    "static/js/main.5cb47045.js"
   ]
 }
