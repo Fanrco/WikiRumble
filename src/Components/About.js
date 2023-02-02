@@ -16,7 +16,7 @@ const Charts = ({showAbout}) => {
                 <br/>
                 by 
                 <br/>
-                <a className = "aboutLink" href="https://www.fischergamedesign.com/home">Fabian Fisher</a>
+                <a className = "aboutLink" href="https://www.fischergamedesign.com/home">Fabian Fischer</a>
                 .
                 
             </div>
