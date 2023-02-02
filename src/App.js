@@ -6,6 +6,7 @@ import MainButton from './Components/MainButton';
 import Charts from './Components/Charts';
 import Lives from './Components/Lives';
 import EndGame from './Components/EndGame';
+import About from './Components/About';
 
 
 var randomUrl = "https://en.wikipedia.org/w/api.php?action=query&format=json&list=random&origin=*&rnnamespace=0&rnlimit=1";
@@ -115,7 +116,7 @@ function App() {
        size: size1, views: views1, link: link1 },
       {title: title2, content: content2.slice(0,200)+"...", 
       size: size2, views: views2, link: link2 }]);
-    
+    setArticleIds(articleIds + [id1,id2]);
     setGameState("choose");
   }
 
@@ -124,6 +125,7 @@ function App() {
     setWins(0);
     setGameState("start");
     setArticles( startMessage );
+    setArticleIds([])
   }
 
   const checkAnswer = (answer) =>{
@@ -171,28 +173,36 @@ function App() {
   const [lives, setLives] = useState(3);
   const [wins, setWins] = useState(0);
   const [gameState, setGameState] = useState("start");
+  const [articleIds, setArticleIds] = useState([]);
+  const [showAbout, setShowAbout] = useState(false);
   
   return (
     <div className = "App">
       
       <div id= "header">
+        <h2>&nbsp;&nbsp;</h2>
         <Lives num = {lives}/>
         <h2>WikiRumble</h2>
         <div id="winsCount">
           <center><h2>{wins+"/10"}</h2></center>
         </div>
+        <button class = "aboutButton"
+          onClick = {() => {setShowAbout(!showAbout);} }>
+          ?
+        </button>
       </div>
       
       <div id = "container">
+      
       <Article top = {true} title = {articles[0].title} content = {articles[0].content} gameState = {gameState}/>
       <Article top = {false} title = {articles[1].title} content = {articles[1].content} gameState = {gameState}/>
       <UI gameState = {gameState} action = {checkAnswer}/>
       <Charts gameState = {gameState} info = {articles}/>
-      <EndGame gameState = {gameState}/>
+      <EndGame gameState = {gameState} ids = {articleIds}/>
       <MainButton gameState = {gameState} action = {getRandomArticles} reset = {resetGame}/>
-      
 
       </div>
+      <About showAbout = {showAbout}/>
     </div>
   );
 }
