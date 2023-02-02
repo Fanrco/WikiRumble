@@ -9,7 +9,7 @@ const EndGame = ({gameState, ids}) => {
     return(
         <div id={"endGameScreen"+(hide ? " hide" : "")}>
             <center><br/><br/><h1>{endText}</h1></center>
-            <center><br/><br/><p>{endCode}</p></center>
+            {/* <center><br/><br/><p>{endCode}</p></center> */}
         </div>
     )
     
